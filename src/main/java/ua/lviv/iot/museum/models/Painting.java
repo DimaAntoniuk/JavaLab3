@@ -5,34 +5,34 @@ public class Painting extends Exhibit {
     private Style paintingStyle;
     private boolean frame;
 
-    public Painting() {}
+    public Painting() { }
 
-    public Painting(Style paintingStyle, boolean frame) {
-        this.paintingStyle = paintingStyle;
-        this.frame = frame;
+    public Painting(final Style paintingStyleArg, final boolean frameArg) {
+        this.paintingStyle = paintingStyleArg;
+        this.frame = frameArg;
     }
 
-    public Style getPaintingStyle() {
+    public final Style getPaintingStyle() {
         return paintingStyle;
     }
 
-    public void setPaintingStyle(Style paintingStyle) {
-        this.paintingStyle = paintingStyle;
+    public final void setPaintingStyle(final Style paintingStyleArg) {
+        this.paintingStyle = paintingStyleArg;
     }
 
-    public boolean isFrame() {
+    public final boolean isFrame() {
         return frame;
     }
 
-    public void setFrame(boolean frame) {
-        this.frame = frame;
+    public final void setFrame(final boolean frameArg) {
+        this.frame = frameArg;
     }
 
     @Override
-    public String toString() {
-        return "Painting{" +
-                "paintingStyle=" + paintingStyle +
-                ", frame=" + frame +
-                '}';
+    public final String toString() {
+        return "Painting{"
+                + "paintingStyle=" + paintingStyle
+                + ", frame=" + frame
+                + '}';
     }
 }

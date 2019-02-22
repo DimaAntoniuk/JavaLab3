@@ -1,6 +1,6 @@
 package ua.lviv.iot.museum.models;
 
-public class Exhibit{
+public class Exhibit {
 
     private String name;
     private boolean portable;
@@ -12,108 +12,115 @@ public class Exhibit{
     private double destroyedInPercentage;
     private Date startDateInCurrentExhibition;
 
-    public Exhibit() {}
+    public Exhibit() { }
 
-    public Exhibit(String name, boolean portable, int centuryOfCreation, String countryOfCreaetion,
-                   Volume size, InterestedPeople popularity, Topic theme, double destroyedInPercentage,
-                   Date startDateInCurrentExhibition) {
-        this.name = name;
-        this.portable = portable;
-        this.centuryOfCreation = centuryOfCreation;
-        this.countryOfCreaetion = countryOfCreaetion;
-        this.size = size;
-        this.popularity = popularity;
-        this.theme = theme;
-        this.destroyedInPercentage = destroyedInPercentage;
-        this.startDateInCurrentExhibition = startDateInCurrentExhibition;
+    public Exhibit(final String nameArg, final boolean portableArg,
+                   final int centuryOfCreationArg,
+                   final String countryOfCreaetionArg,
+                   final Volume sizeArg, final InterestedPeople popularityArg,
+                   final Topic themeAgr, final double destroyedInPercentageArg,
+                   final Date startDateInCurrentExhibitionArg) {
+        this.name = nameArg;
+        this.portable = portableArg;
+        this.centuryOfCreation = centuryOfCreationArg;
+        this.countryOfCreaetion = countryOfCreaetionArg;
+        this.size = sizeArg;
+        this.popularity = popularityArg;
+        this.theme = themeAgr;
+        this.destroyedInPercentage = destroyedInPercentageArg;
+        this.startDateInCurrentExhibition = startDateInCurrentExhibitionArg;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public final void setName(final String nameArg) {
+        this.name = nameArg;
     }
 
-    public boolean isPortable() {
+    public final boolean isPortable() {
         return portable;
     }
 
-    public void setPortable(boolean portable) {
-        this.portable = portable;
+    public final void setPortable(final boolean portableArg) {
+        this.portable = portableArg;
     }
 
-    public int getCenturyOfCreation() {
+    public final int getCenturyOfCreation() {
         return centuryOfCreation;
     }
 
-    public void setCenturyOfCreation(int centuryOfCreation) {
-        this.centuryOfCreation = centuryOfCreation;
+    public final void setCenturyOfCreation(final int centuryOfCreationArg) {
+        this.centuryOfCreation = centuryOfCreationArg;
     }
 
-    public String getCountryOfCreaetion() {
+    public final String getCountryOfCreaetion() {
         return countryOfCreaetion;
     }
 
-    public void setCountryOfCreaetion(String countryOfCreaetion) {
-        this.countryOfCreaetion = countryOfCreaetion;
+    public final void setCountryOfCreaetion(
+            final String countryOfCreaetionArg) {
+        this.countryOfCreaetion = countryOfCreaetionArg;
     }
 
-    public Volume getSize() {
+    public final Volume getSize() {
         return size;
     }
 
-    public void setSize(Volume size) {
-        this.size = size;
+    public final void setSize(final Volume sizeArg) {
+        this.size = sizeArg;
     }
 
-    public InterestedPeople getPopularity() {
+    public final InterestedPeople getPopularity() {
         return popularity;
     }
 
-    public void setPopularity(InterestedPeople popularity) {
-        this.popularity = popularity;
+    public final void setPopularity(final InterestedPeople popularityArg) {
+        this.popularity = popularityArg;
     }
 
-    public Topic getTheme() {
+    public final Topic getTheme() {
         return theme;
     }
 
-    public void setTheme(Topic theme) {
-        this.theme = theme;
+    public final void setTheme(final Topic themeArg) {
+        this.theme = themeArg;
     }
 
-    public double getDestroyedInPercentage() {
+    public final double getDestroyedInPercentage() {
         return destroyedInPercentage;
     }
 
-    public void setDestroyedInPercentage(double destroyedInPercentage) {
-        this.destroyedInPercentage = destroyedInPercentage;
+    public final void setDestroyedInPercentage(
+            final double destroyedInPercentageArg) {
+        this.destroyedInPercentage = destroyedInPercentageArg;
     }
 
-    public Date getStartDateInCurrentExhibition() {
+    public final Date getStartDateInCurrentExhibition() {
         return startDateInCurrentExhibition;
     }
 
-    public void setStartDateInCurrentExhibition(Date startDateInCurrentExhibition) {
-        this.startDateInCurrentExhibition = startDateInCurrentExhibition;
+    public final void setStartDateInCurrentExhibition(
+            final Date startDateInCurrentExhibitionArg) {
+        this.startDateInCurrentExhibition = startDateInCurrentExhibitionArg;
     }
 
     @Override
     public String toString() {
-        return "Exhibit{" +
-                "name='" + name + '\'' +
-                ", portable=" + portable +
-                ", centuryOfCreation=" + centuryOfCreation +
-                ", countryOfCreaetion='" + countryOfCreaetion + '\'' +
-                ", size=" + size +
-                ", popularity=" + popularity +
-                ", theme=" + theme +
-                ", destroyedInPercentage=" + destroyedInPercentage +
-                ", startDateInCurrentExhibition=" + startDateInCurrentExhibition.getDay() +
-                "." + startDateInCurrentExhibition.getMonth() +
-                "." + startDateInCurrentExhibition.getYear() +
-                '}';
+        return "Exhibit{"
+                + "name='" + name + '\''
+                + ", portable=" + portable
+                + ", centuryOfCreation=" + centuryOfCreation
+                + ", countryOfCreaetion='" + countryOfCreaetion + '\''
+                + ", size=" + size
+                + ", popularity=" + popularity
+                + ", theme=" + theme
+                + ", destroyedInPercentage=" + destroyedInPercentage
+                + ", startDateInCurrentExhibition="
+                + startDateInCurrentExhibition.getDay()
+                + "." + startDateInCurrentExhibition.getMonth()
+                + "." + startDateInCurrentExhibition.getYear()
+                + '}';
     }
 }

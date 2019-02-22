@@ -5,34 +5,34 @@ public class Crown extends Exhibit {
     private boolean insertion;
     private int numberOfDiamonds;
 
-    public Crown() {}
+    public Crown() { }
 
-    public Crown(boolean insertion, int numberOfDiamonds) {
-        this.insertion = insertion;
-        this.numberOfDiamonds = numberOfDiamonds;
+    public Crown(final boolean insertionArg, final int numberOfDiamondsArg) {
+        this.insertion = insertionArg;
+        this.numberOfDiamonds = numberOfDiamondsArg;
     }
 
-    public boolean isInsertion() {
+    public final boolean getInsertion() {
         return insertion;
     }
 
-    public void setInsertion(boolean insertion) {
-        this.insertion = insertion;
+    public final void setInsertion(final boolean insertionArg) {
+        this.insertion = insertionArg;
     }
 
-    public int getNumberOfDiamonds() {
+    public final int getNumberOfDiamonds() {
         return numberOfDiamonds;
     }
 
-    public void setNumberOfDiamonds(int numberOfDiamonds) {
-        this.numberOfDiamonds = numberOfDiamonds;
+    public final void setNumberOfDiamonds(final int numberOfDiamondsArg) {
+        this.numberOfDiamonds = numberOfDiamondsArg;
     }
 
     @Override
-    public String toString() {
-        return "Crown{" +
-                "insertion=" + insertion +
-                ", numberOfDiamonds=" + numberOfDiamonds +
-                '}';
+    public final String toString() {
+        return "Crown{"
+                + "insertion=" + insertion
+                + ", numberOfDiamonds=" + numberOfDiamonds
+                + '}';
     }
 }

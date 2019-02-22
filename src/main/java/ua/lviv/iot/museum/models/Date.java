@@ -6,45 +6,45 @@ public class Date {
     private int month;
     private int year;
 
-    public Date() {}
+    public Date() { }
 
-    public Date(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
+    public Date(final int dayArg, final int monthArg, final int yearArg) {
+        this.day = dayArg;
+        this.month = monthArg;
+        this.year = yearArg;
     }
 
-    public int getDay() {
+    public final int getDay() {
         return day;
     }
 
-    public void setDay(int day) {
-        this.day = day;
+    public final void setDay(final int dayArg) {
+        this.day = dayArg;
     }
 
-    public int getMonth() {
+    public final int getMonth() {
         return month;
     }
 
-    public void setMonth(int month) {
-        this.month = month;
+    public final void setMonth(final int monthArg) {
+        this.month = monthArg;
     }
 
-    public int getYear() {
+    public final int getYear() {
         return year;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public final void setYear(final int yearArg) {
+        this.year = yearArg;
     }
 
-    public int compareTo(Date date) {
+    public final int compareTo(final Date date) {
         Integer thisYear = this.year;
         Integer objYear = date.year;
 
         int sComp = thisYear.compareTo(objYear);
 
-        if(sComp != 0) {
+        if (sComp != 0) {
             return sComp;
         }
 
@@ -53,7 +53,7 @@ public class Date {
 
         sComp = thisMonth.compareTo(objMonth);
 
-        if(sComp != 0) {
+        if (sComp != 0) {
             return sComp;
         }
 

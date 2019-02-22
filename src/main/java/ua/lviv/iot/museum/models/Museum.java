@@ -9,63 +9,65 @@ public class Museum {
     private int numberOfHalls;
     private Exhibition[] exhibitions;
 
-    public Museum() {}
+    public Museum() { }
 
-    public Museum(String location, double exhibitionSpace, String name, int yearOfFundation,
-                  int numberOfHalls, Exhibition[] exhibitions) {
-        this.location = location;
-        this.exhibitionSpace = exhibitionSpace;
-        this.name = name;
-        this.yearOfFundation = yearOfFundation;
-        this.numberOfHalls = numberOfHalls;
-        this.exhibitions = exhibitions;
+    public Museum(final String locationArg, final double exhibitionSpaceArg,
+                  final String nameArg, final int yearOfFundationArg,
+                  final int numberOfHallsArg,
+                  final Exhibition[] exhibitionsArg) {
+        this.location = locationArg;
+        this.exhibitionSpace = exhibitionSpaceArg;
+        this.name = nameArg;
+        this.yearOfFundation = yearOfFundationArg;
+        this.numberOfHalls = numberOfHallsArg;
+        this.exhibitions = exhibitionsArg;
     }
 
-    public String getLocation() {
+    public final String getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public final void setLocation(final String locationArg) {
+        this.location = locationArg;
     }
 
-    public double getExhibitionSpace() {
+    public final double getExhibitionSpace() {
         return exhibitionSpace;
     }
 
-    public void setExhibitionSpace(double exhibitionSpace) {
-        this.exhibitionSpace = exhibitionSpace;
+    public final void setExhibitionSpace(final double exhibitionSpaceArg) {
+        this.exhibitionSpace = exhibitionSpaceArg;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public final void setName(final String nameArg) {
+        this.name = nameArg;
     }
 
-    public int getYearOfFundation() {
+    public final int getYearOfFundation() {
         return yearOfFundation;
     }
 
-    public void setYearOfFundation(int yearOfFundation) {
-        this.yearOfFundation = yearOfFundation;
+    public final void setYearOfFundation(final int yearOfFundationArg) {
+        this.yearOfFundation = yearOfFundationArg;
     }
 
-    public int getNumberOfHalls() {
+    public final int getNumberOfHalls() {
         return numberOfHalls;
     }
 
-    public void setNumberOfHalls(int numberOfHalls) {
-        this.numberOfHalls = numberOfHalls;
+    public final void setNumberOfHalls(final int numberOfHallsArg) {
+        this.numberOfHalls = numberOfHallsArg;
     }
 
-    public Exhibition[] getExhibitions() {
+    public final Exhibition[] getExhibitions() {
         return exhibitions;
     }
 
-    public void setExhibitions(Exhibition... exhibitions) {
-        this.exhibitions = exhibitions;
+    public final void setExhibitions(final Exhibition... exhibitionsArg) {
+        this.exhibitions = exhibitionsArg;
     }
 }

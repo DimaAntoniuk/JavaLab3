@@ -1,60 +1,61 @@
 package ua.lviv.iot.museum.manager;
 
-import ua.lviv.iot.museum.models.*;
+import ua.lviv.iot.museum.models.Exhibit;
+import ua.lviv.iot.museum.models.Topic;
+import ua.lviv.iot.museum.models.Exhibition;
+import ua.lviv.iot.museum.models.Museum;
 import ua.lviv.iot.museum.models.Date;
+import ua.lviv.iot.museum.models.Armor;
+import ua.lviv.iot.museum.models.Suit;
+import ua.lviv.iot.museum.models.Vase;
+import ua.lviv.iot.museum.models.Crown;
 
 import java.io.Serializable;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Collections;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
-public class ExhibitionManagerImpl implements ExhibitionManager , Serializable{
+public class ExhibitionManagerImpl implements ExhibitionManager, Serializable {
 
     @Override
-    public List<Exhibit> findByTheme(List<Exhibit> listOfExhibits , Topic theme) {
+    public final List<Exhibit> findByTheme(final List<Exhibit> listOfExhibits,
+                                     final Topic theme) {
 
-        exhibits.clear();
-        for (Exhibit exhibit:listOfExhibits){
-            if(exhibit.getTheme().equals(theme)){
-                exhibits.add(exhibit);
-            }
-        }
-        return exhibits;
+        return listOfExhibits.stream().filter(exhibit ->
+                exhibit.getTheme() == theme).collect(Collectors.toList());
     }
 
     @Override
-    public List<Exhibit> sortByAge(List<Exhibit> listOfExhibits, boolean reverse) {
+    public final List<Exhibit> sortByAge(final List<Exhibit> listOfExhibits,
+                                   final boolean reverse) {
 
-        if(reverse) {
-            listOfExhibits.sort((o1, o2) -> {
-                Integer ageOfFirstExhibit = o1.getCenturyOfCreation();
-                Integer ageOfSecondExhibit = o2.getCenturyOfCreation();
-                return ageOfFirstExhibit.compareTo(ageOfSecondExhibit);
-            });
-            Collections.reverse(listOfExhibits);
-            return listOfExhibits;
+        if (reverse) {
+            Collections.sort(listOfExhibits, Comparator.comparing(
+                    Exhibit::getCenturyOfCreation).reversed());
         } else {
-            listOfExhibits.sort((o1, o2) -> {
-                Integer ageOfFirstExhibit = o1.getCenturyOfCreation();
-                Integer ageOfSecondExhibit = o2.getCenturyOfCreation();
-                return ageOfFirstExhibit.compareTo(ageOfSecondExhibit);
-            });
-            return listOfExhibits;
+            Collections.sort(listOfExhibits, Comparator.comparing(
+                    Exhibit::getCenturyOfCreation));
         }
+        return listOfExhibits;
 
     }
 
     @Override
-    public List<Exhibit> sortByTimeInCurrentExhibition(List<Exhibit> listOfExhibits, boolean reverse) {
+    public final List<Exhibit> sortByTimeInCurrentExhibition(
+            final List<Exhibit> listOfExhibits, final boolean reverse) {
 
-        if(reverse) {
-            listOfExhibits.sort((o1 , o2) -> {
+        if (reverse) {
+            listOfExhibits.sort((o1, o2) -> {
                 Date firstExhibitTime = o1.getStartDateInCurrentExhibition();
                 Date secondExhibitTime = o2.getStartDateInCurrentExhibition();
                 return firstExhibitTime.compareTo(secondExhibitTime);
             });
             return listOfExhibits;
         } else {
-            listOfExhibits.sort((o1 , o2) -> {
+            listOfExhibits.sort((o1, o2) -> {
                 Date firstExhibitTime  = o1.getStartDateInCurrentExhibition();
                 Date secondExhibitTime = o2.getStartDateInCurrentExhibition();
                 return firstExhibitTime.compareTo(secondExhibitTime);
@@ -63,7 +64,7 @@ public class ExhibitionManagerImpl implements ExhibitionManager , Serializable{
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         Museum museum = new Museum();
         Exhibition exhibitionAncientRome = new Exhibition();
@@ -71,13 +72,13 @@ public class ExhibitionManagerImpl implements ExhibitionManager , Serializable{
         exhibitionAncientRome.setTheme(Topic.ANCIENT_ROME);
         museum.setExhibitions(exhibitionAncientRome);
 
-        Exhibit armorHelmet = new Armor(true , true , Suit.HEAD);
+        Exhibit armorHelmet = new Armor(true, true, Suit.HEAD);
         Exhibit vaseFromValyria = new Vase();
-        Exhibit crown = new Crown(true , 7);
+        Exhibit crown = new Crown(true, 7);
 
-        armorHelmet.setStartDateInCurrentExhibition(new Date(17 , 2 , 2018));
-        vaseFromValyria.setStartDateInCurrentExhibition(new Date(15 , 2 , 2018));
-        crown.setStartDateInCurrentExhibition(new Date(13 , 2 , 2019));
+        armorHelmet.setStartDateInCurrentExhibition(new Date(17, 2, 2018));
+        vaseFromValyria.setStartDateInCurrentExhibition(new Date(15, 2, 2018));
+        crown.setStartDateInCurrentExhibition(new Date(13, 2, 2019));
 
         armorHelmet.setTheme(Topic.ANCIENT_ROME);
         vaseFromValyria.setTheme(Topic.ANCIENT_GREECE);
@@ -86,22 +87,28 @@ public class ExhibitionManagerImpl implements ExhibitionManager , Serializable{
         armorHelmet.setCenturyOfCreation(19);
         vaseFromValyria.setCenturyOfCreation(17);
         crown.setCenturyOfCreation(15);
-        allExhibits.setExhibits(armorHelmet , vaseFromValyria , crown);
+        allExhibits.setExhibits(armorHelmet, vaseFromValyria, crown);
 
         ExhibitionManager unclePetro = new ExhibitionManagerImpl();
 
-        exhibitionAncientRome.setExhibits(unclePetro.findByTheme(Arrays.asList(allExhibits.getExhibits()) ,
+        exhibitionAncientRome.setExhibits(unclePetro.findByTheme(
+                Arrays.asList(allExhibits.getExhibits()),
                 Topic.ANCIENT_ROME).toArray(new Exhibit[0]));
 
-        System.out.println(Arrays.toString(exhibitionAncientRome.getExhibits()));
+        System.out.println(
+                Arrays.toString(exhibitionAncientRome.getExhibits()));
 
-        unclePetro.sortByAge(Arrays.asList(exhibitionAncientRome.getExhibits()) , false);
+        unclePetro.sortByAge(
+                Arrays.asList(exhibitionAncientRome.getExhibits()), false);
 
-        System.out.println(Arrays.toString(exhibitionAncientRome.getExhibits()));
+        System.out.println(Arrays.toString(
+                exhibitionAncientRome.getExhibits()));
 
-        unclePetro.sortByTimeInCurrentExhibition(Arrays.asList(exhibitionAncientRome.getExhibits()) , false);
+        unclePetro.sortByTimeInCurrentExhibition(
+                Arrays.asList(exhibitionAncientRome.getExhibits()), false);
 
-        System.out.println(Arrays.toString(exhibitionAncientRome.getExhibits()));
+        System.out.println(
+                Arrays.toString(exhibitionAncientRome.getExhibits()));
     }
 
 }

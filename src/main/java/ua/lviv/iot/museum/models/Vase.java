@@ -5,34 +5,34 @@ public class Vase extends Exhibit {
     private String material;
     private boolean painted;
 
-    public Vase() {}
+    public Vase() { }
 
-    public Vase(String material, boolean painted) {
-        this.material = material;
-        this.painted = painted;
+    public Vase(final String materialArg, final boolean paintedArg) {
+        this.material = materialArg;
+        this.painted = paintedArg;
     }
 
-    public String getMaterial() {
+    public final String getMaterial() {
         return material;
     }
 
-    public void setMaterial(String material) {
-        this.material = material;
+    public final void setMaterial(final String materialArg) {
+        this.material = materialArg;
     }
 
-    public boolean isPainted() {
+    public final boolean isPainted() {
         return painted;
     }
 
-    public void setPainted(boolean painted) {
-        this.painted = painted;
+    public final void setPainted(final boolean paintedArg) {
+        this.painted = paintedArg;
     }
 
     @Override
-    public String toString() {
-        return "Vase{" +
-                "material='" + material + '\'' +
-                ", painted=" + painted +
-                '}';
+    public final String toString() {
+        return "Vase{"
+                + "material='" + material + '\''
+                + ", painted=" + painted
+                + '}';
     }
 }

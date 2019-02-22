@@ -9,68 +9,67 @@ public class Exhibition {
     private Topic theme;
     private Museum currentMuseum;
 
-    public Exhibition(Date startDate, Date endDate, Exhibit[] exhibits, String name, Topic theme,
-                      Museum currentMuseum) {
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.exhibits = exhibits;
-        this.name = name;
-        this.theme = theme;
-        this.currentMuseum = currentMuseum;
+    public Exhibition(final Date startDateArg, final Date endDateArg,
+                      final Exhibit[] exhibitsArg, final String nameArg,
+                      final Topic themeArg, final Museum currentMuseumArg) {
+        this.startDate = startDateArg;
+        this.endDate = endDateArg;
+        this.exhibits = exhibitsArg;
+        this.name = nameArg;
+        this.theme = themeArg;
+        this.currentMuseum = currentMuseumArg;
     }
 
     public Exhibition() {
-
         exhibits = new Exhibit[1];
         exhibits[0] = new Exhibit();
-
     }
 
-    public Date getStartDate() {
+    public final Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public final void setStartDate(final Date startDateArg) {
+        this.startDate = startDateArg;
     }
 
-    public Date getEndDate() {
+    public final Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public final void setEndDate(final Date endDateArg) {
+        this.endDate = endDateArg;
     }
 
-    public Exhibit[] getExhibits() {
+    public final Exhibit[] getExhibits() {
         return exhibits;
     }
 
-    public void setExhibits(Exhibit... exhibits) {
-        this.exhibits = exhibits;
+    public final void setExhibits(final Exhibit... exhibitsArg) {
+        this.exhibits = exhibitsArg;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public final void setName(final String nameArg) {
+        this.name = nameArg;
     }
 
-    public Topic getTheme() {
+    public final Topic getTheme() {
         return theme;
     }
 
-    public void setTheme(Topic theme) {
-        this.theme = theme;
+    public final void setTheme(final Topic themeArg) {
+        this.theme = themeArg;
     }
 
-    public Museum getCurrentMuseum() {
+    public final Museum getCurrentMuseum() {
         return currentMuseum;
     }
 
-    public void setCurrentMuseum(Museum currentMuseum) {
-        this.currentMuseum = currentMuseum;
+    public final void setCurrentMuseum(final Museum currentMuseumArg) {
+        this.currentMuseum = currentMuseumArg;
     }
 }
