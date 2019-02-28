@@ -42,25 +42,25 @@ public class Date {
         Integer thisYear = this.year;
         Integer objYear = date.year;
 
-        int sComp = thisYear.compareTo(objYear);
+        int compare = thisYear > objYear ? 1 : thisYear < objYear ? -1 : 0;
 
-        if (sComp != 0) {
-            return sComp;
+        if (compare != 0) {
+            return compare;
         }
 
         Integer thisMonth = this.month;
         Integer objMonth = date.month;
 
-        sComp = thisMonth.compareTo(objMonth);
+        compare = thisMonth > objMonth ? 1 : thisMonth < objMonth ? -1 : 0;
 
-        if (sComp != 0) {
-            return sComp;
+        if (compare != 0) {
+            return compare;
         }
 
         Integer thisDay = this.day;
-        Integer dateDay = date.day;
+        Integer objDay = date.day;
 
-        return thisDay.compareTo(dateDay);
+        return thisDay > objDay ? 1 : -1;
 
     }
 }

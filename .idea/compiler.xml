@@ -9,8 +9,8 @@
         <module name="museum" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="museum" target="8" />
+    <bytecodeTargetLevel target="8">
+      <module name="museum" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

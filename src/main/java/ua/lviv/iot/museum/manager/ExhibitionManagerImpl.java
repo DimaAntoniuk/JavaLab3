@@ -20,6 +20,17 @@ import java.util.stream.Collectors;
 
 public class ExhibitionManagerImpl implements ExhibitionManager, Serializable {
 
+    private static final int numberOfDiamonds = 7;
+    private static final int helmetDay = 17;
+    private static final int helmetYear = 2018;
+    private static final int vaseDay = 15;
+    private static final int vaseYear = 2018;
+    private static final int crownDay = 13;
+    private static final int crownYear = 2019;
+    private static final int armorCenturyOfCreation = 19;
+    private static final int vaseCenturyOfCreation = 17;
+    private static final int crownCenturyOfCreation = 15;
+
     @Override
     public final List<Exhibit> findByTheme(final List<Exhibit> listOfExhibits,
                                      final Topic theme) {
@@ -66,6 +77,9 @@ public class ExhibitionManagerImpl implements ExhibitionManager, Serializable {
 
     public static void main(final String[] args) {
 
+
+
+
         Museum museum = new Museum();
         Exhibition exhibitionAncientRome = new Exhibition();
         Exhibition allExhibits = new Exhibition();
@@ -74,19 +88,22 @@ public class ExhibitionManagerImpl implements ExhibitionManager, Serializable {
 
         Exhibit armorHelmet = new Armor(true, true, Suit.HEAD);
         Exhibit vaseFromValyria = new Vase();
-        Exhibit crown = new Crown(true, 7);
+        Exhibit crown = new Crown(true, numberOfDiamonds);
 
-        armorHelmet.setStartDateInCurrentExhibition(new Date(17, 2, 2018));
-        vaseFromValyria.setStartDateInCurrentExhibition(new Date(15, 2, 2018));
-        crown.setStartDateInCurrentExhibition(new Date(13, 2, 2019));
+        armorHelmet.setStartDateInCurrentExhibition(
+                new Date(helmetDay, 2, helmetYear));
+        vaseFromValyria.setStartDateInCurrentExhibition(
+                new Date(vaseDay, 2, vaseYear));
+        crown.setStartDateInCurrentExhibition(
+                new Date(crownDay, 2, crownYear));
 
         armorHelmet.setTheme(Topic.ANCIENT_ROME);
         vaseFromValyria.setTheme(Topic.ANCIENT_GREECE);
         crown.setTheme(Topic.ANCIENT_ROME);
 
-        armorHelmet.setCenturyOfCreation(19);
-        vaseFromValyria.setCenturyOfCreation(17);
-        crown.setCenturyOfCreation(15);
+        armorHelmet.setCenturyOfCreation(armorCenturyOfCreation);
+        vaseFromValyria.setCenturyOfCreation(vaseCenturyOfCreation);
+        crown.setCenturyOfCreation(crownCenturyOfCreation);
         allExhibits.setExhibits(armorHelmet, vaseFromValyria, crown);
 
         ExhibitionManager unclePetro = new ExhibitionManagerImpl();
