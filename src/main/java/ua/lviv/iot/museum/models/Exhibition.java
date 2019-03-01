@@ -1,28 +1,31 @@
 package ua.lviv.iot.museum.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Exhibition {
 
     private Date startDate;
     private Date endDate;
-    private Exhibit[] exhibits;
+    private List<Exhibit> exhibits;
     private String name;
     private Topic theme;
     private Museum currentMuseum;
 
     public Exhibition(final Date startDateArg, final Date endDateArg,
-                      final Exhibit[] exhibitsArg, final String nameArg,
+                      final List<Exhibit> exhibitsArg, final String nameArg,
                       final Topic themeArg, final Museum currentMuseumArg) {
         this.startDate = startDateArg;
         this.endDate = endDateArg;
-        this.exhibits = exhibitsArg;
+        this.exhibits = new ArrayList<>(exhibitsArg);
         this.name = nameArg;
         this.theme = themeArg;
         this.currentMuseum = currentMuseumArg;
     }
 
     public Exhibition() {
-        exhibits = new Exhibit[1];
-        exhibits[0] = new Exhibit();
+        exhibits = new ArrayList<>();
+        exhibits.add(0, new Exhibit());
     }
 
     public final Date getStartDate() {
@@ -41,11 +44,11 @@ public class Exhibition {
         this.endDate = endDateArg;
     }
 
-    public final Exhibit[] getExhibits() {
+    public final List<Exhibit> getExhibits() {
         return exhibits;
     }
 
-    public final void setExhibits(final Exhibit... exhibitsArg) {
+    public final void setExhibits(final List<Exhibit> exhibitsArg) {
         this.exhibits = exhibitsArg;
     }
 
@@ -71,5 +74,9 @@ public class Exhibition {
 
     public final void setCurrentMuseum(final Museum currentMuseumArg) {
         this.currentMuseum = currentMuseumArg;
+    }
+
+    public final void addExhibit(final Exhibit exhibitionArg){
+        this.exhibits.add(exhibitionArg);
     }
 }

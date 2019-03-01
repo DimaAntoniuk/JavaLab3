@@ -1,5 +1,8 @@
 package ua.lviv.iot.museum.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Museum {
 
     private String location;
@@ -7,14 +10,16 @@ public class Museum {
     private String name;
     private int yearOfFundation;
     private int numberOfHalls;
-    private Exhibition[] exhibitions;
+    private List<Exhibition> exhibitions;
 
-    public Museum() { }
+    public Museum() {
+        exhibitions = new ArrayList<>();
+    }
 
     public Museum(final String locationArg, final double exhibitionSpaceArg,
                   final String nameArg, final int yearOfFundationArg,
                   final int numberOfHallsArg,
-                  final Exhibition[] exhibitionsArg) {
+                  final ArrayList<Exhibition> exhibitionsArg) {
         this.location = locationArg;
         this.exhibitionSpace = exhibitionSpaceArg;
         this.name = nameArg;
@@ -63,11 +68,16 @@ public class Museum {
         this.numberOfHalls = numberOfHallsArg;
     }
 
-    public final Exhibition[] getExhibitions() {
+    public final List<Exhibition> getExhibitions() {
         return exhibitions;
     }
 
-    public final void setExhibitions(final Exhibition... exhibitionsArg) {
+    public final void setExhibitions(
+            final ArrayList<Exhibition> exhibitionsArg) {
         this.exhibitions = exhibitionsArg;
+    }
+
+    public final void addExhibition(final Exhibition exhibitionArg){
+        this.exhibitions.add(exhibitionArg);
     }
 }

@@ -84,7 +84,7 @@ public class ExhibitionManagerImpl implements ExhibitionManager, Serializable {
         Exhibition exhibitionAncientRome = new Exhibition();
         Exhibition allExhibits = new Exhibition();
         exhibitionAncientRome.setTheme(Topic.ANCIENT_ROME);
-        museum.setExhibitions(exhibitionAncientRome);
+        museum.addExhibition(exhibitionAncientRome);
 
         Exhibit armorHelmet = new Armor(true, true, Suit.HEAD);
         Exhibit vaseFromValyria = new Vase();
@@ -104,28 +104,32 @@ public class ExhibitionManagerImpl implements ExhibitionManager, Serializable {
         armorHelmet.setCenturyOfCreation(armorCenturyOfCreation);
         vaseFromValyria.setCenturyOfCreation(vaseCenturyOfCreation);
         crown.setCenturyOfCreation(crownCenturyOfCreation);
-        allExhibits.setExhibits(armorHelmet, vaseFromValyria, crown);
+        allExhibits.addExhibit(armorHelmet);
+        allExhibits.addExhibit(vaseFromValyria);
+        allExhibits.addExhibit(crown);
 
         ExhibitionManager unclePetro = new ExhibitionManagerImpl();
 
         exhibitionAncientRome.setExhibits(unclePetro.findByTheme(
-                Arrays.asList(allExhibits.getExhibits()),
-                Topic.ANCIENT_ROME).toArray(new Exhibit[0]));
+                allExhibits.getExhibits(), Topic.ANCIENT_ROME));
 
         System.out.println(
-                Arrays.toString(exhibitionAncientRome.getExhibits()));
+                Arrays.toString((
+                        exhibitionAncientRome.getExhibits()).toArray()));
 
         unclePetro.sortByAge(
-                Arrays.asList(exhibitionAncientRome.getExhibits()), false);
-
-        System.out.println(Arrays.toString(
-                exhibitionAncientRome.getExhibits()));
-
-        unclePetro.sortByTimeInCurrentExhibition(
-                Arrays.asList(exhibitionAncientRome.getExhibits()), false);
+                exhibitionAncientRome.getExhibits(), false);
 
         System.out.println(
-                Arrays.toString(exhibitionAncientRome.getExhibits()));
+                Arrays.toString((
+                        exhibitionAncientRome.getExhibits()).toArray()));
+
+        unclePetro.sortByTimeInCurrentExhibition(
+                exhibitionAncientRome.getExhibits(), false);
+
+        System.out.println(
+                Arrays.toString((
+                        exhibitionAncientRome.getExhibits()).toArray()));
     }
 
 }

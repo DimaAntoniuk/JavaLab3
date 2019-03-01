@@ -2,5 +2,16 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.8.0" timestamp="2019-02-28T22:26:42.287">
+    version="6.8.0" timestamp="2019-03-01T18:48:26.090">
+<file name="D:\projects\JavaLab3\src\main\java\ua\lviv\iot\museum\manager\ExhibitionManagerImpl.java">
+<violation beginline="118" endline="118" begincolumn="25" endcolumn="59" rule="UselessParentheses" ruleset="Code Style" package="ua.lviv.iot.museum.manager" class="ExhibitionManagerImpl" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+Useless parentheses.
+</violation>
+<violation beginline="125" endline="125" begincolumn="25" endcolumn="59" rule="UselessParentheses" ruleset="Code Style" package="ua.lviv.iot.museum.manager" class="ExhibitionManagerImpl" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+Useless parentheses.
+</violation>
+<violation beginline="132" endline="132" begincolumn="25" endcolumn="59" rule="UselessParentheses" ruleset="Code Style" package="ua.lviv.iot.museum.manager" class="ExhibitionManagerImpl" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+Useless parentheses.
+</violation>
+</file>
 </pmd>
