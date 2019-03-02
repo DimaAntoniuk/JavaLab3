@@ -77,7 +77,7 @@ public class Museum {
         this.exhibitions = exhibitionsArg;
     }
 
-    public final void addExhibition(final Exhibition exhibitionArg){
+    public final void addExhibition(final Exhibition exhibitionArg) {
         this.exhibitions.add(exhibitionArg);
     }
 }
