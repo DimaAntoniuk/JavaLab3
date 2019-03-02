@@ -10,12 +10,12 @@ import ua.lviv.iot.museum.models.Suit;
 import ua.lviv.iot.museum.models.Vase;
 import ua.lviv.iot.museum.models.Crown;
 
-import java.io.Serializable;
-
-import java.util.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class ExhibitionManagerImpl implements ExhibitionManager, Serializable {
+public class ExhibitionManagerImpl implements ExhibitionManager {
 
     private static final int NUMBER_OF_DIAMONDS = 7;
     private static final int HELMET_DAY = 17;
@@ -38,7 +38,7 @@ public class ExhibitionManagerImpl implements ExhibitionManager, Serializable {
 
     @Override
     public final List<Exhibit> sortByAge(final List<Exhibit> listOfExhibits,
-                                   final boolean reverse) {
+                                         final boolean reverse) {
 
         if (reverse) {
             Collections.sort(listOfExhibits, Comparator.comparing(

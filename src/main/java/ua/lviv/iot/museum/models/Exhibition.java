@@ -13,7 +13,7 @@ public class Exhibition {
     private Museum currentMuseum;
 
     public Exhibition(final Date startDateArg, final Date endDateArg,
-                      final ArrayList<Exhibit> exhibitsArg, final String nameArg,
+                      final List<Exhibit> exhibitsArg, final String nameArg,
                       final Topic themeArg, final Museum currentMuseumArg) {
         this.startDate = startDateArg;
         this.endDate = endDateArg;
