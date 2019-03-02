@@ -12,28 +12,25 @@ import ua.lviv.iot.museum.models.Crown;
 
 import java.io.Serializable;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Collections;
-import java.util.Arrays;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ExhibitionManagerImpl implements ExhibitionManager, Serializable {
 
-    private static final int numberOfDiamonds = 7;
-    private static final int helmetDay = 17;
-    private static final int helmetYear = 2018;
-    private static final int vaseDay = 15;
-    private static final int vaseYear = 2018;
-    private static final int crownDay = 13;
-    private static final int crownYear = 2019;
-    private static final int armorCenturyOfCreation = 19;
-    private static final int vaseCenturyOfCreation = 17;
-    private static final int crownCenturyOfCreation = 15;
+    private static final int NUMBER_OF_DIAMONDS = 7;
+    private static final int HELMET_DAY = 17;
+    private static final int HELMET_YEAR = 2018;
+    private static final int VASE_DAY = 15;
+    private static final int VASE_YEAR = 2018;
+    private static final int CROWN_DAY = 13;
+    private static final int CROWN_YEAR = 2019;
+    private static final int ARMOR_CENTURY_OF_CREATION = 19;
+    private static final int VASE_CENTURY_OF_CREATION = 17;
+    private static final int CROWN_CENTURY_OF_CREATION = 15;
 
     @Override
     public final List<Exhibit> findByTheme(final List<Exhibit> listOfExhibits,
-                                     final Topic theme) {
+                                                     final Topic theme) {
 
         return listOfExhibits.stream().filter(exhibit ->
                 exhibit.getTheme() == theme).collect(Collectors.toList());
@@ -84,48 +81,46 @@ public class ExhibitionManagerImpl implements ExhibitionManager, Serializable {
         Exhibition exhibitionAncientRome = new Exhibition();
         Exhibition allExhibits = new Exhibition();
         exhibitionAncientRome.setTheme(Topic.ANCIENT_ROME);
-        museum.setExhibitions(exhibitionAncientRome);
+        museum.addExhibition(exhibitionAncientRome);
 
         Exhibit armorHelmet = new Armor(true, true, Suit.HEAD);
         Exhibit vaseFromValyria = new Vase();
-        Exhibit crown = new Crown(true, numberOfDiamonds);
+        Exhibit crown = new Crown(true, NUMBER_OF_DIAMONDS);
 
         armorHelmet.setStartDateInCurrentExhibition(
-                new Date(helmetDay, 2, helmetYear));
+                new Date(HELMET_DAY, 2, HELMET_YEAR));
         vaseFromValyria.setStartDateInCurrentExhibition(
-                new Date(vaseDay, 2, vaseYear));
+                new Date(VASE_DAY, 2, VASE_YEAR));
         crown.setStartDateInCurrentExhibition(
-                new Date(crownDay, 2, crownYear));
+                new Date(CROWN_DAY, 2, CROWN_YEAR));
 
         armorHelmet.setTheme(Topic.ANCIENT_ROME);
         vaseFromValyria.setTheme(Topic.ANCIENT_GREECE);
         crown.setTheme(Topic.ANCIENT_ROME);
 
-        armorHelmet.setCenturyOfCreation(armorCenturyOfCreation);
-        vaseFromValyria.setCenturyOfCreation(vaseCenturyOfCreation);
-        crown.setCenturyOfCreation(crownCenturyOfCreation);
-        allExhibits.setExhibits(armorHelmet, vaseFromValyria, crown);
+        armorHelmet.setCenturyOfCreation(ARMOR_CENTURY_OF_CREATION);
+        vaseFromValyria.setCenturyOfCreation(VASE_CENTURY_OF_CREATION);
+        crown.setCenturyOfCreation(CROWN_CENTURY_OF_CREATION);
+        allExhibits.addExhibit(armorHelmet);
+        allExhibits.addExhibit(vaseFromValyria);
+        allExhibits.addExhibit(crown);
+
 
         ExhibitionManager unclePetro = new ExhibitionManagerImpl();
 
         exhibitionAncientRome.setExhibits(unclePetro.findByTheme(
-                Arrays.asList(allExhibits.getExhibits()),
-                Topic.ANCIENT_ROME).toArray(new Exhibit[0]));
+                allExhibits.getExhibits(), Topic.ANCIENT_ROME));
 
-        System.out.println(
-                Arrays.toString(exhibitionAncientRome.getExhibits()));
+        exhibitionAncientRome.getExhibits().forEach(System.out::println);
 
-        unclePetro.sortByAge(
-                Arrays.asList(exhibitionAncientRome.getExhibits()), false);
+        unclePetro.sortByAge(exhibitionAncientRome.getExhibits(), false);
 
-        System.out.println(Arrays.toString(
-                exhibitionAncientRome.getExhibits()));
+        exhibitionAncientRome.getExhibits().forEach(System.out::println);
 
         unclePetro.sortByTimeInCurrentExhibition(
-                Arrays.asList(exhibitionAncientRome.getExhibits()), false);
+                exhibitionAncientRome.getExhibits(), false);
 
-        System.out.println(
-                Arrays.toString(exhibitionAncientRome.getExhibits()));
+        exhibitionAncientRome.getExhibits().forEach(System.out::println);
     }
 
 }
