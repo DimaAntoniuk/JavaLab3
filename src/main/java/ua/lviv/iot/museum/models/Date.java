@@ -61,6 +61,5 @@ public class Date {
         Integer objDay = date.day;
 
         return thisDay > objDay ? 1 : -1;
-
     }
 }
