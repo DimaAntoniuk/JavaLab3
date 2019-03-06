@@ -1,6 +1,8 @@
 package ua.lviv.iot.museum.models;
 
-public class Date {
+import javax.xml.crypto.Data;
+
+public class Date implements Comparable<Date>{
 
     private int day;
     private int month;
@@ -38,11 +40,12 @@ public class Date {
         this.year = yearArg;
     }
 
+    @Override
     public final int compareTo(final Date date) {
         Integer thisYear = this.year;
         Integer objYear = date.year;
 
-        int compare = thisYear > objYear ? 1 : thisYear < objYear ? -1 : 0;
+        int compare = thisYear.compareTo(objYear);
 
         if (compare != 0) {
             return compare;
@@ -51,7 +54,7 @@ public class Date {
         Integer thisMonth = this.month;
         Integer objMonth = date.month;
 
-        compare = thisMonth > objMonth ? 1 : thisMonth < objMonth ? -1 : 0;
+        compare = thisMonth.compareTo(objMonth);
 
         if (compare != 0) {
             return compare;
@@ -60,6 +63,6 @@ public class Date {
         Integer thisDay = this.day;
         Integer objDay = date.day;
 
-        return thisDay > objDay ? 1 : -1;
+        return thisDay.compareTo(objDay);
     }
 }
