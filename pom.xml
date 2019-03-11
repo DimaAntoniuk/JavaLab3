@@ -17,29 +17,23 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit.jupiter.version}</version>
+            <version>5.4.0</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.jupiter.version}</version>
+            <version>5.4.0</version>
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.openpojo</groupId>
-            <artifactId>openpojo</artifactId>
-            <version>0.8.10</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.openpojo</groupId>-->
+            <!--<artifactId>openpojo</artifactId>-->
+            <!--<version>0.8.10</version>-->
+        <!--</dependency>-->
+
 
     </dependencies>
 
@@ -81,19 +75,44 @@
                 <version>3.0.0</version>
             </plugin>
 
+            <!--<plugin>-->
+                <!--<groupId>org.jacoco</groupId>-->
+                <!--<artifactId>jacoco-maven-plugin</artifactId>-->
+                <!--<version>0.8.2</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>prepare-agent</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                    <!--&lt;!&ndash; attached to Maven test phase &ndash;&gt;-->
+                    <!--<execution>-->
+                        <!--<id>report</id>-->
+                        <!--<phase>test</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>report</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.2</version>
+                <version>0.8.3</version>
+                <configuration>
+                    <output>file</output>
+                    <append>true</append>
+                </configuration>
                 <executions>
                     <execution>
+                        <id>jacoco-initialize</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-                    <!-- attached to Maven test phase -->
                     <execution>
-                        <id>report</id>
+                        <id>jacoco-site</id>
                         <phase>test</phase>
                         <goals>
                             <goal>report</goal>
@@ -101,7 +120,6 @@
                     </execution>
                 </executions>
             </plugin>
-
 
 
         </plugins>

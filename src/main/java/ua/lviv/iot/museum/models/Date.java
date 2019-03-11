@@ -1,8 +1,6 @@
 package ua.lviv.iot.museum.models;
 
-import javax.xml.crypto.Data;
-
-public class Date implements Comparable<Date>{
+public class Date implements Comparable<Date> {
 
     private int day;
     private int month;

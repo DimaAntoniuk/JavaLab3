@@ -28,17 +28,17 @@ public class ExhibitionManagerImpl implements ExhibitionManager {
     private static final int VASE_CENTURY_OF_CREATION = 17;
     private static final int CROWN_CENTURY_OF_CREATION = 15;
 
-    @Override
+
     public final List<Exhibit> findByTheme(final List<Exhibit> listOfExhibits,
-                                                     final Topic theme) {
+                                                  final Topic theme) {
 
         return listOfExhibits.stream().filter(exhibit ->
                 exhibit.getTheme() == theme).collect(Collectors.toList());
     }
 
-    @Override
+
     public final List<Exhibit> sortByAge(final List<Exhibit> listOfExhibits,
-                                         final boolean reverse) {
+                                                final boolean reverse) {
 
         if (reverse) {
             Collections.sort(listOfExhibits, Comparator.comparing(
@@ -51,7 +51,6 @@ public class ExhibitionManagerImpl implements ExhibitionManager {
 
     }
 
-    @Override
     public final List<Exhibit> sortByTimeInCurrentExhibition(
             final List<Exhibit> listOfExhibits, final boolean reverse) {
 
