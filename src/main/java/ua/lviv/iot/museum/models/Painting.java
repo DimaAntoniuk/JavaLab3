@@ -35,4 +35,16 @@ public class Painting extends Exhibit {
                 + ", frame=" + frame
                 + '}';
     }
+
+    public final String getHeaders() {
+        return super.getHeaders() + ','
+                + "paintingStyle" + ','
+                + "frame" + '\n';
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + ','
+                + paintingStyle + ','
+                + frame + '\n';
+    }
 }

@@ -35,4 +35,16 @@ public class Vase extends Exhibit {
                 + ", painted=" + painted
                 + '}';
     }
+
+    public final String getHeaders() {
+        return super.getHeaders() + ','
+                + "material" + ','
+                + "painted" + '\n';
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + ','
+                + material + ','
+                + painted + '\n';
+    }
 }

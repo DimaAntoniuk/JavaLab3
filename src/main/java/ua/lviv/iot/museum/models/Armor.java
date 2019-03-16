@@ -3,15 +3,15 @@ package ua.lviv.iot.museum.models;
 public class Armor extends Exhibit {
 
     private boolean madeOfMetal;
-    private boolean pattren;
+    private boolean pattern;
     private Suit suit;
 
     public Armor() { }
 
-    public Armor(final boolean madeOfMetalArg, final boolean pattrenArg,
+    public Armor(final boolean madeOfMetalArg, final boolean patternArg,
                  final Suit suitArg) {
         this.madeOfMetal = madeOfMetalArg;
-        this.pattren = pattrenArg;
+        this.pattern = patternArg;
         this.suit = suitArg;
     }
 
@@ -23,12 +23,12 @@ public class Armor extends Exhibit {
         this.madeOfMetal = madeOfMetalArg;
     }
 
-    public final boolean isPattren() {
-        return pattren;
+    public final boolean isPattern() {
+        return pattern;
     }
 
-    public final void setPattren(final boolean pattrenArg) {
-        this.pattren = pattrenArg;
+    public final void setPattern(final boolean patternArg) {
+        this.pattern = patternArg;
     }
 
     public final Suit getSuit() {
@@ -43,8 +43,22 @@ public class Armor extends Exhibit {
     public final String toString() {
         return "Armor{"
                 + "madeOfMetal=" + madeOfMetal
-                + ", pattren=" + pattren
+                + ", pattern=" + pattern
                 + ", suit=" + suit
                 + '}';
+    }
+
+    public final String getHeaders() {
+        return super.getHeaders() + ','
+                + "madeOfMetal" + ','
+                + "pattern" + ','
+                + "suit" + '\n';
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + ','
+                + madeOfMetal + ','
+                + pattern + ','
+                + suit + '\n';
     }
 }
