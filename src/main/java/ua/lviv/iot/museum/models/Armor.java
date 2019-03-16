@@ -15,6 +15,22 @@ public class Armor extends Exhibit {
         this.suit = suitArg;
     }
 
+    public Armor(final String name, final boolean portable,
+                 final int centuryOfCreation, final String countryOfCreation,
+                 final Volume size, final InterestedPeople popularity,
+                 final Topic theme, final double destroyedInPercentage,
+                 final Date startDateInCurrentExhibition,
+                 final boolean madeOfMetalArg, final boolean patternArg,
+                 final Suit suitArg) {
+        super(name, portable, centuryOfCreation, countryOfCreation,
+                size, popularity, theme, destroyedInPercentage,
+                startDateInCurrentExhibition);
+        this.madeOfMetal = madeOfMetalArg;
+        this.pattern = patternArg;
+        this.suit = suitArg;
+    }
+
+
     public final boolean isMadeOfMetal() {
         return madeOfMetal;
     }
@@ -52,13 +68,13 @@ public class Armor extends Exhibit {
         return super.getHeaders() + ','
                 + "madeOfMetal" + ','
                 + "pattern" + ','
-                + "suit" + '\n';
+                + "suit";
     }
 
     public final String toCSV() {
         return super.toCSV() + ','
                 + madeOfMetal + ','
                 + pattern + ','
-                + suit + '\n';
+                + suit;
     }
 }

@@ -36,7 +36,7 @@ public class ExhibitionManagerWriter {
                 writer.write(exhibit.toCSV());
                 writer.newLine();
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             System.out.println("End of writing to file");
