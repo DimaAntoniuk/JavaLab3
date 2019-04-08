@@ -1,5 +1,8 @@
 package ua.lviv.iot.museum.models;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Crown extends Exhibit {
 
     private boolean insertion;
@@ -47,17 +50,5 @@ public class Crown extends Exhibit {
                 + "insertion=" + insertion
                 + ", numberOfDiamonds=" + numberOfDiamonds
                 + '}';
-    }
-
-    public final String getHeaders() {
-        return super.getHeaders() + ','
-                + "insertion" + ','
-                + "numberOfDiamonds";
-    }
-
-    public final String toCSV() {
-        return super.toCSV() + ','
-                + insertion + ','
-                + numberOfDiamonds;
     }
 }

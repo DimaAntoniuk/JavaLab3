@@ -1,5 +1,8 @@
 package ua.lviv.iot.museum.models;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Vase extends Exhibit {
 
     private String material;
@@ -13,11 +16,11 @@ public class Vase extends Exhibit {
     }
 
     public Vase(final String name, final boolean portable,
-                 final int centuryOfCreation, final String countryOfCreation,
-                 final Volume size, final InterestedPeople popularity,
-                 final Topic theme, final double destroyedInPercentage,
-                 final Date startDateInCurrentExhibition,
-                 final String materialArg, final boolean paintedArg) {
+                final int centuryOfCreation, final String countryOfCreation,
+                final Volume size, final InterestedPeople popularity,
+                final Topic theme, final double destroyedInPercentage,
+                final Date startDateInCurrentExhibition,
+                final String materialArg, final boolean paintedArg) {
         super(name, portable, centuryOfCreation, countryOfCreation,
                 size, popularity, theme, destroyedInPercentage,
                 startDateInCurrentExhibition);
@@ -47,17 +50,5 @@ public class Vase extends Exhibit {
                 + "material='" + material + '\''
                 + ", painted=" + painted
                 + '}';
-    }
-
-    public final String getHeaders() {
-        return super.getHeaders() + ','
-                + "material" + ','
-                + "painted";
-    }
-
-    public final String toCSV() {
-        return super.toCSV() + ','
-                + material + ','
-                + painted;
     }
 }

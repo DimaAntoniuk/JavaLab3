@@ -1,6 +1,19 @@
 package ua.lviv.iot.museum.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.GenerationType;
+
+
+@Entity
+@Inheritance
 public class Exhibit {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
     private String name;
     private boolean portable;
@@ -105,6 +118,14 @@ public class Exhibit {
             final Date startDateInCurrentExhibitionArg) {
         this.startDateInCurrentExhibition = startDateInCurrentExhibitionArg;
     }
+    public final Integer getId() {
+        return id;
+    }
+
+    public final void setId(final Integer idArg) {
+        this.id = idArg;
+    }
+
 
     @Override
     public String toString() {
@@ -123,26 +144,4 @@ public class Exhibit {
                 + "." + startDateInCurrentExhibition.getYear()
                 + '}';
     }
-
-    public String getHeaders() {
-        return "name" + ','
-                + "portable" + ','
-                + "centuryOfCreation" + ','
-                + "countryOfCreation" + ','
-                + "size" + ','
-                + "popularity" + ','
-                + "theme" + ','
-                + "destroyedInPercentage" + ','
-                + "startDateInCurrentExhibition";
-    }
-
-    public String toCSV() {
-        return name + ',' + portable + ',' + centuryOfCreation + ','
-                + countryOfCreaetion + ',' + ',' + size + ',' + popularity + ','
-                + theme + ',' + destroyedInPercentage + ','
-                + startDateInCurrentExhibition.getDay() + ','
-                + startDateInCurrentExhibition.getMonth() + ','
-                + startDateInCurrentExhibition.getYear();
-    }
-
 }
