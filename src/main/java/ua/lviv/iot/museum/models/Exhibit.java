@@ -18,7 +18,7 @@ public class Exhibit {
     private String name;
     private boolean portable;
     private int centuryOfCreation;
-    private String countryOfCreaetion;
+    private String countryOfCreation;
     private Volume size;
     private InterestedPeople popularity;
     private Topic theme;
@@ -29,14 +29,14 @@ public class Exhibit {
 
     public Exhibit(final String nameArg, final boolean portableArg,
                    final int centuryOfCreationArg,
-                   final String countryOfCreaetionArg,
+                   final String countryOfCreationArg,
                    final Volume sizeArg, final InterestedPeople popularityArg,
                    final Topic themeAgr, final double destroyedInPercentageArg,
                    final Date startDateInCurrentExhibitionArg) {
         this.name = nameArg;
         this.portable = portableArg;
         this.centuryOfCreation = centuryOfCreationArg;
-        this.countryOfCreaetion = countryOfCreaetionArg;
+        this.countryOfCreation = countryOfCreationArg;
         this.size = sizeArg;
         this.popularity = popularityArg;
         this.theme = themeAgr;
@@ -68,13 +68,13 @@ public class Exhibit {
         this.centuryOfCreation = centuryOfCreationArg;
     }
 
-    public final String getCountryOfCreaetion() {
-        return countryOfCreaetion;
+    public final String getCountryOfCreation() {
+        return countryOfCreation;
     }
 
-    public final void setCountryOfCreaetion(
-            final String countryOfCreaetionArg) {
-        this.countryOfCreaetion = countryOfCreaetionArg;
+    public final void setCountryOfCreation(
+            final String countryOfCreationArg) {
+        this.countryOfCreation = countryOfCreationArg;
     }
 
     public final Volume getSize() {
@@ -133,7 +133,7 @@ public class Exhibit {
                 + "name='" + name + '\''
                 + ", portable=" + portable
                 + ", centuryOfCreation=" + centuryOfCreation
-                + ", countryOfCreaetion='" + countryOfCreaetion + '\''
+                + ", countryOfCreaetion='" + countryOfCreation + '\''
                 + ", size=" + size
                 + ", popularity=" + popularity
                 + ", theme=" + theme

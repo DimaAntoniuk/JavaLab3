@@ -1,4 +1,4 @@
-package ua.lviv.iot.lab8;
+package ua.lviv.iot.second;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Lab8ApplicationTests {
+public class SecondApplicationTests {
 
 	@Test
 	public void contextLoads() {

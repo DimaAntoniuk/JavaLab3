@@ -1,4 +1,4 @@
-package ua.lviv.iot.lab8;
+package ua.lviv.iot.second;
 
 import org.springframework.data.repository.CrudRepository;
 import ua.lviv.iot.museum.models.Exhibit;
