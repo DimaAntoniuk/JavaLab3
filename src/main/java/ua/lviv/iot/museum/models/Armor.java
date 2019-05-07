@@ -1,12 +1,15 @@
 package ua.lviv.iot.museum.models;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Entity
 public class Armor extends Exhibit {
 
     private boolean madeOfMetal;
     private boolean pattern;
+    @Enumerated(EnumType.STRING)
     private Suit suit;
 
     public Armor() { }

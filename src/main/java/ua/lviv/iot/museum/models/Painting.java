@@ -1,10 +1,13 @@
 package ua.lviv.iot.museum.models;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Entity
 public class Painting extends Exhibit {
 
+    @Enumerated(EnumType.STRING)
     private Style paintingStyle;
     private boolean frame;
 

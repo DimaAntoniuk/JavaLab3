@@ -1,16 +1,18 @@
-package ua.lviv.iot.lab8;
+package ua.lviv.iot.second;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import ua.lviv.iot.museum.models.*;
 
 @SpringBootApplication
-public class Lab8Application {
+@EntityScan("ua.lviv.iot")
+public class SecondApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Lab8Application.class, args).close();
+		SpringApplication.run(SecondApplication.class, args);
 	}
 
 	@Bean

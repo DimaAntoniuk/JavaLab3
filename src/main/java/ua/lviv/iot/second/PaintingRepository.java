@@ -1,6 +1,7 @@
-package ua.lviv.iot.lab8;
+package ua.lviv.iot.second;
 
 import ua.lviv.iot.museum.models.Painting;
+
 
 import javax.transaction.Transactional;
 
