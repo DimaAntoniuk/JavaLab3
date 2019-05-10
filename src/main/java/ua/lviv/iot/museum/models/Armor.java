@@ -68,4 +68,18 @@ public class Armor extends Exhibit {
                 + ", suit=" + suit
                 + '}';
     }
+
+    public final String getHeaders() {
+        return super.getHeaders() + ','
+                + "madeOfMetal" + ','
+                + "pattern" + ','
+                + "suit";
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + ','
+                + madeOfMetal + ','
+                + pattern + ','
+                + suit;
+    }
 }
