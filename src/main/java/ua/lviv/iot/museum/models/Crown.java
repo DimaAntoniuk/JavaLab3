@@ -52,15 +52,4 @@ public class Crown extends Exhibit {
                 + '}';
     }
 
-    public final String getHeaders() {
-        return super.getHeaders() + ','
-                + "insertion" + ','
-                + "numberOfDiamonds";
-    }
-
-    public final String toCSV() {
-        return super.toCSV() + ','
-                + insertion + ','
-                + numberOfDiamonds;
-    }
 }

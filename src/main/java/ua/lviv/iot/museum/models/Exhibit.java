@@ -156,24 +156,5 @@ public class Exhibit {
                 + '}';
     }
 
-    public String getHeaders() {
-        return "name" + ','
-                + "portable" + ','
-                + "centuryOfCreation" + ','
-                + "countryOfCreation" + ','
-                + "size" + ','
-                + "popularity" + ','
-                + "theme" + ','
-                + "destroyedInPercentage" + ','
-                + "startDateInCurrentExhibition";
-    }
 
-    public String toCSV() {
-        return name + ',' + portable + ',' + centuryOfCreation + ','
-                + countryOfCreation + ',' + ',' + size + ',' + popularity + ','
-                + theme + ',' + destroyedInPercentage + ','
-                + startDateInCurrentExhibition.getDay() + ','
-                + startDateInCurrentExhibition.getMonth() + ','
-                + startDateInCurrentExhibition.getYear();
-    }
 }
