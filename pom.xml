@@ -51,6 +51,11 @@
 			<artifactId>json-path</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.openpojo</groupId>
+			<artifactId>openpojo</artifactId>
+			<version>0.8.10</version>
+		</dependency>
 	</dependencies>
 
 	<build>

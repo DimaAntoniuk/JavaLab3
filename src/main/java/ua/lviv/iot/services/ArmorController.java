@@ -6,29 +6,47 @@ import org.springframework.web.bind.annotation.*;
 import ua.lviv.iot.museum.models.Armor;
 import ua.lviv.iot.second.ArmorRepository;
 
+import java.util.LinkedList;
+import java.util.List;
+
 @RestController
 public class ArmorController {
 
     @Autowired
     private ArmorRepository repository;
 
-    @GetMapping("/armor/{id}")
-    public Armor getArmor(@PathVariable Integer id) {
-        return repository.findById(id).get();
+    @RequestMapping(value = "/armor/", method = RequestMethod.GET)
+    public List<Armor> getAllArmors() {
+        List<Armor> armors = new LinkedList<>();
+        repository.findAll().forEach(armors::add);
+        if(armors.isEmpty()) {
+            return null;
+        }
+        return armors;
     }
 
-    @PostMapping("/armor")
+    @RequestMapping(value = "/armor/{id}", method = RequestMethod.GET)
+    public Armor getArmor(@PathVariable Integer id) {
+        if(repository.findById(id).isPresent()) {
+            return repository.findById(id).get();
+        }
+        return null;
+    }
+
+    @RequestMapping(value = "/armor", method = RequestMethod.POST)
     public Armor postArmor(@RequestBody Armor armor) {
         return repository.save(armor);
     }
 
-    @PutMapping("/armor/{id}")
+    @RequestMapping(value = "/armor/{id}", method = RequestMethod.PUT)
     public Armor putArmor(@RequestBody Armor armor, @PathVariable Integer id) {
         return repository.save(armor);
     }
 
-    @DeleteMapping("/armor/{id}")
+    @RequestMapping(value = "/armor/{id}", method = RequestMethod.DELETE)
     public void deleteArmor(@PathVariable Integer id) {
-        repository.deleteById(id);
+        if(repository.findById(id).isPresent()) {
+            repository.deleteById(id);
+        }
     }
 }
