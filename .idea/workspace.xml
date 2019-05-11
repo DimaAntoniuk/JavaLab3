@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bc8b47b-1523-466d-ad13-0fe09cd1ad33" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/lviv/iot/services/ArmorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/lviv/iot/services/ArmorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/lviv/iot/services/CrownController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/lviv/iot/services/CrownController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/lviv/iot/services/VaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/lviv/iot/services/VaseController.java" afterDir="false" />
-    </list>
+    <list default="true" id="0bc8b47b-1523-466d-ad13-0fe09cd1ad33" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +14,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="21">
+              <caret line="83" column="20" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -58,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/lviv/iot/museum/models/Armor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="735">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -67,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/lviv/iot/services/ArmorController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="861">
-              <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+              <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,19 +144,19 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/lviv/iot/museum/models/Painting.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/lviv/iot/museum/models/Exhibit.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/lviv/iot/museum/models/Crown.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/ua/lviv/iot/services/ArmorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/lviv/iot/services/VaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/lviv/iot/services/CrownController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/lviv/iot/museum/models/Armor.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -611,14 +607,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/lviv/iot/museum/models/Armor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/lviv/iot/services/ArmorController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="861">
-          <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -634,8 +630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="21">
+          <caret line="83" column="20" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="20" />
         </state>
       </provider>
     </entry>
