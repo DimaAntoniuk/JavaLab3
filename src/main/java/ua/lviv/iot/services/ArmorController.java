@@ -26,7 +26,7 @@ public class ArmorController {
     }
 
     @RequestMapping(value = "/armor/{id}", method = RequestMethod.GET)
-    public Armor getArmor(@PathVariable Integer id) {
+    public Armor getArmor(@PathVariable Integer id) {   
         if(repository.findById(id).isPresent()) {
             return repository.findById(id).get();
         }
