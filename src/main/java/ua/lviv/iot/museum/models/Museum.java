@@ -72,12 +72,11 @@ public class Museum {
         return exhibitions;
     }
 
-    public final void setExhibitions(
-            final ArrayList<Exhibition> exhibitionsArg) {
+    public final void setExhibitions(final List<Exhibition> exhibitionsArg) {
         this.exhibitions = exhibitionsArg;
     }
 
-    public final void addExhibition(final Exhibition exhibitionArg) {
-        this.exhibitions.add(exhibitionArg);
+    public final void addExhibition(final Exhibition exhibition) {
+        exhibitions.add(exhibition);
     }
 }

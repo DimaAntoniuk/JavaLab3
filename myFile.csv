@@ -1,0 +1,8 @@
+name,portable,centuryOfCreation,countryOfCreation,size,popularity,theme,destroyedInPercentage,startDateInCurrentExhibition,madeOfMetal,pattern,suit
+ArmorName,true,19,Ukraine,,ua.lviv.iot.museum.models.Volume@3f23a3a0,EIGHT_PER_TEN,WORLD_WAR_II,30.0,12,12,2018,false,false,BODY
+name,portable,centuryOfCreation,countryOfCreation,size,popularity,theme,destroyedInPercentage,startDateInCurrentExhibition,insertion,numberOfDiamonds
+CrownName,true,19,Ukraine,,ua.lviv.iot.museum.models.Volume@5ab14cb9,SEVEN_PER_TEN,ANCIENT_ROME,30.0,13,12,2018,true,17
+name,portable,centuryOfCreation,countryOfCreation,size,popularity,theme,destroyedInPercentage,startDateInCurrentExhibition,paintingStyle,frame
+PaintingName,false,19,Ukraine,,ua.lviv.iot.museum.models.Volume@5fb97279,TEN_PER_TEN,WORLD_WAR_II,30.0,12,12,2018,ABSTRACT_ART,false
+name,portable,centuryOfCreation,countryOfCreation,size,popularity,theme,destroyedInPercentage,startDateInCurrentExhibition,material,painted
+VaseName,false,19,Ukraine,,ua.lviv.iot.museum.models.Volume@439a8f59,NINE_PER_TEN,ANCIENT_GREECE,30.0,12,12,2018,clay,true

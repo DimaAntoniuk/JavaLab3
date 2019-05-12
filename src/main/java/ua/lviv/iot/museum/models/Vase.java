@@ -12,6 +12,19 @@ public class Vase extends Exhibit {
         this.painted = paintedArg;
     }
 
+    public Vase(final String name, final boolean portable,
+                 final int centuryOfCreation, final String countryOfCreation,
+                 final Volume size, final InterestedPeople popularity,
+                 final Topic theme, final double destroyedInPercentage,
+                 final Date startDateInCurrentExhibition,
+                 final String materialArg, final boolean paintedArg) {
+        super(name, portable, centuryOfCreation, countryOfCreation,
+                size, popularity, theme, destroyedInPercentage,
+                startDateInCurrentExhibition);
+        this.material = materialArg;
+        this.painted = paintedArg;
+    }
+
     public final String getMaterial() {
         return material;
     }
@@ -34,5 +47,17 @@ public class Vase extends Exhibit {
                 + "material='" + material + '\''
                 + ", painted=" + painted
                 + '}';
+    }
+
+    public final String getHeaders() {
+        return super.getHeaders() + ','
+                + "material" + ','
+                + "painted";
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + ','
+                + material + ','
+                + painted;
     }
 }

@@ -12,6 +12,19 @@ public class Crown extends Exhibit {
         this.numberOfDiamonds = numberOfDiamondsArg;
     }
 
+    public Crown(final String name, final boolean portable,
+                 final int centuryOfCreation, final String countryOfCreation,
+                 final Volume size, final InterestedPeople popularity,
+                 final Topic theme, final double destroyedInPercentage,
+                 final Date startDateInCurrentExhibition,
+                 final boolean insertionArg, final int numberOfDiamondsArg) {
+        super(name, portable, centuryOfCreation, countryOfCreation,
+                size, popularity, theme, destroyedInPercentage,
+                startDateInCurrentExhibition);
+        this.insertion = insertionArg;
+        this.numberOfDiamonds = numberOfDiamondsArg;
+    }
+
     public final boolean getInsertion() {
         return insertion;
     }
@@ -34,5 +47,17 @@ public class Crown extends Exhibit {
                 + "insertion=" + insertion
                 + ", numberOfDiamonds=" + numberOfDiamonds
                 + '}';
+    }
+
+    public final String getHeaders() {
+        return super.getHeaders() + ','
+                + "insertion" + ','
+                + "numberOfDiamonds";
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + ','
+                + insertion + ','
+                + numberOfDiamonds;
     }
 }
