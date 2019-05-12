@@ -1,9 +1,15 @@
 package ua.lviv.iot.museum.models;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
+@Entity
 public class Armor extends Exhibit {
 
     private boolean madeOfMetal;
     private boolean pattern;
+    @Enumerated(EnumType.STRING)
     private Suit suit;
 
     public Armor() { }
@@ -29,7 +35,6 @@ public class Armor extends Exhibit {
         this.pattern = patternArg;
         this.suit = suitArg;
     }
-
 
     public final boolean isMadeOfMetal() {
         return madeOfMetal;
@@ -62,19 +67,5 @@ public class Armor extends Exhibit {
                 + ", pattern=" + pattern
                 + ", suit=" + suit
                 + '}';
-    }
-
-    public final String getHeaders() {
-        return super.getHeaders() + ','
-                + "madeOfMetal" + ','
-                + "pattern" + ','
-                + "suit";
-    }
-
-    public final String toCSV() {
-        return super.toCSV() + ','
-                + madeOfMetal + ','
-                + pattern + ','
-                + suit;
     }
 }

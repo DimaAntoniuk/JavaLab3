@@ -1,5 +1,8 @@
 package ua.lviv.iot.museum.models;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Volume {
 
     private double height;
