@@ -11,5 +11,4 @@ public interface ExhibitionManager {
     List<Exhibit> sortByAge(List<Exhibit> listOfExhibits, boolean reverse);
     List<Exhibit> sortByTimeInCurrentExhibition(List<Exhibit> listOfExhibits,
                                                        boolean reverse);
-
 }

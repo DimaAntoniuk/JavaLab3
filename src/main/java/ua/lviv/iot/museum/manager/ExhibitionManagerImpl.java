@@ -73,9 +73,6 @@ public class ExhibitionManagerImpl implements ExhibitionManager {
 
     public static void main(final String[] args) {
 
-
-
-
         Museum museum = new Museum();
         Exhibition exhibitionAncientRome = new Exhibition();
         Exhibition allExhibits = new Exhibition();
@@ -104,7 +101,6 @@ public class ExhibitionManagerImpl implements ExhibitionManager {
         allExhibits.addExhibit(vaseFromValyria);
         allExhibits.addExhibit(crown);
 
-
         ExhibitionManager unclePetro = new ExhibitionManagerImpl();
 
         exhibitionAncientRome.setExhibits(unclePetro.findByTheme(
@@ -122,4 +118,35 @@ public class ExhibitionManagerImpl implements ExhibitionManager {
         exhibitionAncientRome.getExhibits().forEach(System.out::println);
     }
 
+
+    public static Exhibition createExhibits() {
+        Museum museum = new Museum();
+        Exhibition exhibitionAncientRome = new Exhibition();
+        Exhibition allExhibits = new Exhibition();
+        exhibitionAncientRome.setTheme(Topic.ANCIENT_ROME);
+        museum.addExhibition(exhibitionAncientRome);
+
+        Exhibit armorHelmet = new Armor(true, true, Suit.HEAD);
+        Exhibit vaseFromValyria = new Vase();
+        Exhibit crown = new Crown(true, NUMBER_OF_DIAMONDS);
+
+        armorHelmet.setStartDateInCurrentExhibition(
+                new Date(HELMET_DAY, 2, HELMET_YEAR));
+        vaseFromValyria.setStartDateInCurrentExhibition(
+                new Date(VASE_DAY, 2, VASE_YEAR));
+        crown.setStartDateInCurrentExhibition(
+                new Date(CROWN_DAY, 2, CROWN_YEAR));
+
+        armorHelmet.setTheme(Topic.ANCIENT_ROME);
+        vaseFromValyria.setTheme(Topic.ANCIENT_GREECE);
+        crown.setTheme(Topic.ANCIENT_ROME);
+
+        armorHelmet.setCenturyOfCreation(ARMOR_CENTURY_OF_CREATION);
+        vaseFromValyria.setCenturyOfCreation(VASE_CENTURY_OF_CREATION);
+        crown.setCenturyOfCreation(CROWN_CENTURY_OF_CREATION);
+        allExhibits.addExhibit(armorHelmet);
+        allExhibits.addExhibit(vaseFromValyria);
+        allExhibits.addExhibit(crown);
+        return allExhibits;
+    }
 }
