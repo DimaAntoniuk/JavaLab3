@@ -44,6 +44,7 @@ public class Date implements Comparable<Date> {
         Integer objYear = date.year;
 
         int compare = thisYear.compareTo(objYear);
+
         if (compare != 0) {
             return compare;
         }
@@ -52,6 +53,7 @@ public class Date implements Comparable<Date> {
         Integer objMonth = date.month;
 
         compare = thisMonth.compareTo(objMonth);
+
         if (compare != 0) {
             return compare;
         }
@@ -60,6 +62,5 @@ public class Date implements Comparable<Date> {
         Integer objDay = date.day;
 
         return thisDay.compareTo(objDay);
-
     }
 }

@@ -10,6 +10,6 @@ public interface ExhibitionManager {
     List<Exhibit> findByTheme(List<Exhibit> listOfExhibits, Topic theme);
     List<Exhibit> sortByAge(List<Exhibit> listOfExhibits, boolean reverse);
     List<Exhibit> sortByTimeInCurrentExhibition(List<Exhibit> listOfExhibits,
-                                                boolean reverse);
+                                                       boolean reverse);
 
 }
