@@ -38,27 +38,9 @@ public class ArmorController {
         return repository.save(armor);
     }
 
-    @RequestMapping(value = "/armor/{id}", method = RequestMethod.PUT)
-    public Armor putArmor(@RequestBody Armor newArmor, @PathVariable Integer id) {
-        return repository.findById(id)
-                .map(armor -> {
-                    armor.setName(newArmor.getName());
-                    armor.setPortable(newArmor.isPortable());
-                    armor.setCenturyOfCreation(newArmor.getCenturyOfCreation());
-                    armor.setCountryOfCreation(newArmor.getCountryOfCreation());
-                    armor.setSize(newArmor.getSize());
-                    armor.setPopularity(newArmor.getPopularity());
-                    armor.setTheme(newArmor.getTheme());
-                    armor.setDestroyedInPercentage(newArmor.getDestroyedInPercentage());
-                    armor.setStartDateInCurrentExhibition(newArmor.getStartDateInCurrentExhibition());
-                    armor.setMadeOfMetal(newArmor.isMadeOfMetal());
-                    armor.setPattern(newArmor.isPattern());
-                    armor.setSuit(newArmor.getSuit());
-                    return repository.save(armor);
-                }).orElseGet(() -> {
-                    newArmor.setId(id);
-                    return repository.save(newArmor);
-                });
+    @RequestMapping(value = "/armor", method = RequestMethod.PUT)
+    public Armor putArmor(@RequestBody Armor newArmor) {
+        return repository.save(newArmor);
     }
 
     @RequestMapping(value = "/armor/{id}", method = RequestMethod.DELETE)
